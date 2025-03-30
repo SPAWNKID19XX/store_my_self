@@ -9,3 +9,7 @@ class UserViewSet(ModelViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
     permission_classes = [IsAuthenticated]
+
+    def get(self):
+        print('+++++++++',self.queryset)
+        return self.queryset
